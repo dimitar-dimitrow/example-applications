@@ -72,7 +72,7 @@ func main() {
 }
 
 func initializeClient() {
-	slog.Info("Broker configuration", "URL", *brokerURL)
+	slog.Info("Broker configuration", "URLL", *brokerURL)
 	options := mqtt.NewClientOptions()
 	options.AddBroker(*brokerURL)
 	if *brokerUsername != "" {
