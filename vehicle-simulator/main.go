@@ -22,7 +22,6 @@ import (
 	"syscall"
 
 	dittoModel "github.com/eclipse/ditto-clients-golang/model"
-	"github.com/eclipse/ditto-clients-golang/protocol"
 	"github.com/eclipse/ditto-clients-golang/protocol/things"
 	mqtt "github.com/eclipse/paho.mqtt.golang"
 )
@@ -58,7 +57,7 @@ func main() {
 	keepAlive := make(chan os.Signal, 1)
 	signal.Notify(keepAlive, os.Interrupt, syscall.SIGTERM)
 
-	initializeClient()
+	   initializeClient()
 	getDeviceData()
 
 	defer func() {
