@@ -58,7 +58,7 @@ func main() {
 	keepAlive := make(chan os.Signal, 1)
 	signal.Notify(keepAlive, os.Interrupt, syscall.SIGTERM)
 
-	   initializeClient()
+	initializeClient()
 	getDeviceData()
 
 	defer func() {
