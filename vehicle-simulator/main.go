@@ -34,7 +34,7 @@ type deviceData struct {
 }
 
 var mqttClient mqtt.Client
-var currentDeviceData = deviceData{"", "", ""}
+var currentDeviceData = deviceData{}
 var telemetrySenderStarted bool
 var ctdSubscriptionTopics []string
 
@@ -58,7 +58,7 @@ func main() {
 	keepAlive := make(chan os.Signal, 1)
 	signal.Notify(keepAlive, os.Interrupt, syscall.SIGTERM)
 
-	initializeClient()
+	   initializeClient()
 	getDeviceData()
 
 	defer func() {
