@@ -1,19 +1,21 @@
 {
-    "container_name": "vss",
-    "image": {
-        "name": "<image:version>"
-    },
-    "config": {
-      "cmd": [
-        "python",
-        "/app/edge_client.py",
-        "--host=ctrhost"
-      ]
-    },
-    "host_config": {
-      "extra_hosts": [
-          "ctrhost:host_ip"
-      ]
-    }
+  "container_name": "vss",
+  "image": {
+      "name": "ghcr.io/dimitar-dimitrow/example-applications/kuksa:main"
+  },
+  "config": {
+    "cmd": [
+      "python",
+      "-u",
+      "/app/edge_client.py",
+      "--mqtt_host=ctrhost",
+      "--kuksa_host=databroker"
+    ]
+  },
+  "host_config": {
+    "extra_hosts": [
+        "ctrhost:host_ip",
+        "databroker:container_databroker-host"
+    ]
   }
-  
+}
