@@ -1,7 +1,14 @@
 name: kuksa
 
-on: 
-  [push, pull_request]:
+on:
+  workflow_dispatch: 
+  push:
+    paths:
+      - ".github/workflows/docker-build-kuksa.yml"
+      - "kuksa/**"
+    branches:
+      - "main"
+  pull_request:
     paths:
       - ".github/workflows/docker-build-kuksa.yml"
       - "kuksa/**"
